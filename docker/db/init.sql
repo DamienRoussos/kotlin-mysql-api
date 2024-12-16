@@ -1,6 +1,7 @@
-USE msql;
+CREATE DATABASE API;
+USE API;
 
-CREATE TABLE IF NOT EXISTS customer (
+    CREATE TABLE IF NOT EXISTS customer (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -16,7 +17,7 @@ CREATE TABLE IF NOT EXISTS customer (
     customer_type VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE IF NOT EXISTS product (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -29,7 +30,7 @@ CREATE TABLE IF NOT EXISTS product (
     delivery_type VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE IF NOT EXISTS store (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -47,7 +48,7 @@ CREATE TABLE IF NOT EXISTS store (
     image_url VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)
+);
 
     INSERT INTO customer (first_name, last_name, address_name, address_number, postal_code, city, country, countr_code, phone_number, email, password, customer_type)
     VALUES
